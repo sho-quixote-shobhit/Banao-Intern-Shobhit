@@ -1,0 +1,19 @@
+.me-3 {
+    margin-right: 1rem;
+}
+
+.border-bottom {
+    border-bottom: 2px solid;
+}
+
+.custom-input {
+    border: none;
+    border-bottom: 1px solid #000; /* Change the color as needed */
+    padding: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.custom-input:focus {
+    border-bottom: 2px solid #007bff; /* Focus color */
+}
