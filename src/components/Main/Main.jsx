@@ -93,6 +93,7 @@ const Main = () => {
                 </div>
             </div>
             <div className='row'>
+                {/* box1 */}
                 <div className='col-lg-8 col-12'>
                     {filteredData.map((item, index) => (
                         <div key={index} className='mb-3'>
@@ -139,10 +140,11 @@ const Main = () => {
                         </div>
                     ))}
                 </div>
+                {/* box2 */}
                 <div className='col-lg-4 d-none d-lg-block d-flex flex-column px-4'>
                     <div className='d-flex justify-content-center align-items-center'>
                         <FaLocationArrow className='mt-1 me-1' />
-                        <input type='text' className='w-100 custom-input' placeholder='Enter your location' />
+                        <input type='text' disabled = {user ? false : true} className='w-100 custom-input' placeholder='Enter your location' />
                     </div>
                     <div className='d-flex mt-3'>
                         <FaExclamationCircle className='mt-1 me-1' />
