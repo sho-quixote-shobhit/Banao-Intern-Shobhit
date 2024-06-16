@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useUser } from '../../providers/authContext';
 import AuthModal from '../Auth/AuthModal';
 import { FaChevronDown } from 'react-icons/fa';
@@ -24,6 +24,26 @@ const Navbar = () => {
         setDropdownOpen(false);
         toast.success('Logged out successfully.');
     };
+
+    useEffect(() => {
+        const handleResize = () => {
+            const windowWidth = window.innerWidth;
+            const navbarCollapse = document.getElementById('navbarSupportedContent');
+            const navbarToggler = document.querySelector('.navbar-toggler');
+
+            if (windowWidth < 992 && navbarCollapse && navbarToggler && !navbarCollapse.classList.contains('show')) {
+                navbarToggler.click();
+            }
+        };
+
+        // Trigger the resize function on component mount and on window resize
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return (
         <div style={{ backgroundColor: 'red' }}>
